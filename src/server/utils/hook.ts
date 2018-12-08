@@ -3,6 +3,7 @@ const setHook = () => {
     const hook = require('css-modules-require-hook');
     hook({
       generateScopedName: '[name]-[local]-[hash:base64:5]',
+      extensions: ['.scss'],
     });
     require('asset-require-hook')({
       extensions: ['jpg', 'png'],

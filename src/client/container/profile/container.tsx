@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './profile.css';
+import styles from './profile.scss';
 
 import html from '../../assets/html/embed.html';
 import img from '../../assets/images/pig.jpg';

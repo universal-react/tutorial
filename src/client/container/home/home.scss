@@ -6,9 +6,21 @@
   width: 100%;
   background: #000;
   color: #fff;
-  height: 40px;
+  height: 80px;
   line-height: 40px;
   padding: 0 10px;
+  background: #F7F7F7;
+  border: 1px solid #DDD;
+  color: #000;
+  overflow: hidden;
+}
+
+.header .left {
+  float: left;
+}
+
+.header .right {
+  float: right;
 }
 
 * {

@@ -14,7 +14,11 @@ const babelConfig = {
   ],
   plugins: [
     "universal-import",
-    "@babel/plugin-syntax-dynamic-import"
+    "@babel/plugin-syntax-dynamic-import",
+    ["import", {
+      "libraryName": "antd",
+      "style": true,   // or 'css'
+    }]
   ],
   babelrc: false,
 };

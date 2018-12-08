@@ -52,15 +52,17 @@ const config = {
       }]
     },
     {
-      test: /\.css$/,
+      test: /\.scss$/,
       use: ExtractCssChunks.extract({
-        use: libifyOptions.concat({
+        use: libifyOptions.concat([{
           loader: 'css-loader',
           options: {
             modules: true,
             localIdentName: '[name]-[local]-[hash:base64:5]'
           }
-        }),
+        }, {
+          loader: 'sass-loader',
+        }]),
       })
     }, {
       test: /\.(jpg|png)$/,

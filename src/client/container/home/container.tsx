@@ -7,7 +7,7 @@ import {
   toogleBlankVisible,
 } from './action';
 
-import styles from './home.css';
+import styles from './home.scss';
 
 class Home extends React.Component<any, any> {
   constructor(props) {
@@ -34,7 +34,14 @@ class Home extends React.Component<any, any> {
 
     return (
       <div className={styles.red}>
-      <header className={styles.header}>__universal--react__replace__</header>
+      <header className={styles.header}>
+        <div className={styles.left}>
+          <span>友聘</span>
+        </div>
+        <div className={styles.right}>
+          
+        </div>
+      </header>
       <div>
           {userListDOM}
         </div>
