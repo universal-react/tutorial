@@ -28,6 +28,7 @@ function tmpl(options: ITmplOptions) {
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>${title}</title>
         ${styles}
+        <link href="https://cdn.bootcss.com/normalize/8.0.1/normalize.css" rel="stylesheet">
         <script>
           window.initialState = ${JSON.stringify(initialStore)};
         </script>
@@ -40,7 +41,7 @@ function tmpl(options: ITmplOptions) {
         }
         ${scripts}
         ${cssHash}
-      </body>
+      </body>l
     </html>`;
 }
 

@@ -7,25 +7,40 @@
   background: #000;
   color: #fff;
   height: 80px;
-  line-height: 40px;
+  line-height: 80px;
   padding: 0 10px;
   background: #F7F7F7;
   border: 1px solid #DDD;
   color: #000;
   overflow: hidden;
-}
-
-.header .left {
-  float: left;
-}
-
-.header .right {
-  float: right;
-}
-
-* {
-  padding: 0;
-  margin: 0;
+  box-sizing: border-box;
+  margin-bottom: 20px;;
+  .left {
+    float: left;
+    span {
+      font-family: PingFangSC-Semibold;
+      font-size: 20px;
+      color: #000000;
+      letter-spacing: 0;
+    }
+    a {
+      font-family: PingFangSC-Semibold;
+      font-size: 12px;
+      color: #6F85FF;
+      letter-spacing: 0;
+    }
+  }
+  .right {
+    float: right;
+    line-height: 40px;
+    .avatar {
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+    }
+  }
 }
 
 .button {
@@ -36,4 +51,46 @@
   color: #fff;
   border: 1px solid white;
   padding: 0 10px;
+}
+
+.mainContainer {
+  width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+  .left {
+    float: left;
+    background: #FFFFFF;
+    border: 1px solid #E6E6E6;
+    border-radius: 2px;
+    width: 688px;
+    .userInfoContainer {
+      padding: 25px;
+      border-bottom: 1px solid #e6e6e6;
+      overflow: hidden;
+      .bigAvatar {
+        float: left;
+        height: 88px;
+        width: 88px;
+        border-radius: 50%;
+        margin-right: 17px;
+        background: #ccc;
+      }
+      .userInfo {
+        float: left;
+        .userName {
+          font-family: PingFangSC-Semibold;
+          font-size: 24px;
+          color: #000000;
+          letter-spacing: 0;
+        }
+      }
+    }
+  }
+  .right {
+    float: right;
+    width: 240px;
+    background: #FFFFFF;
+    border: 1px solid #E6E6E6;
+    border-radius: 2px;
+  }
 }

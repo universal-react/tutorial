@@ -52,6 +52,10 @@ const config = {
       }]
     },
     {
+      test: /\.css$/,
+      use: 'css-loader',
+    },
+    {
       test: /\.scss$/,
       use: ExtractCssChunks.extract({
         use: libifyOptions.concat([{

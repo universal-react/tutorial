@@ -44,6 +44,7 @@
     "extract-css-chunks-webpack-plugin": "^2.0.18",
     "file-loader": "^1.1.11",
     "node-sass": "^4.10.0",
+    "normalize.css": "^8.0.1",
     "prop-types": "^15.6.0",
     "raw-loader": "^0.5.1",
     "raw-module-require-hook": "^1.0.0",
