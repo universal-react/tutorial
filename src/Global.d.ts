@@ -6,6 +6,8 @@ declare module '*.css' {
   export = classNames;
 }
 
+declare module '*.less';
+
 declare module '*.scss' {
   interface IClassNames {
     [className: string]: string

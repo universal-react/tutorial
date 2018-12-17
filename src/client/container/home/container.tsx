@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { Button } from 'antd';
+
 import {
   getInitialData,
   getUserList,
   toogleBlankVisible,
 } from './action';
-
 import styles from './home.scss';
 
 class Home extends React.Component<any, any> {
@@ -16,10 +17,6 @@ class Home extends React.Component<any, any> {
 
   componentDidMount() {
     this.props.getInitialData();
-  }
-
-  handleBtnClick = () => {
-    this.props.toogleBlankVisible();
   }
 
   render() {
@@ -61,7 +58,9 @@ class Home extends React.Component<any, any> {
               </div>
             </div>
           </div>
-          <div className={styles.right}></div>
+          <div className={styles.right}>
+            <Button type="primary">hh</Button>
+          </div>
         </div>
       </div>
     );

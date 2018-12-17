@@ -41,7 +41,7 @@ function tmpl(options: ITmplOptions) {
         }
         ${scripts}
         ${cssHash}
-      </body>l
+      </body>
     </html>`;
 }
 

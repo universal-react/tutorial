@@ -25,6 +25,11 @@ const { PORT, DEV } = config;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use('*', (req, res, next) => {
+  console.log(req.originalUrl);
+  next();
+});
+
 app.use('/user', (req, res, next) => {
   require('./routes/user')(req, res, next);
 });

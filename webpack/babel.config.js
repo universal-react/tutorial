@@ -17,7 +17,7 @@ const babelConfig = {
     "@babel/plugin-syntax-dynamic-import",
     ["import", {
       "libraryName": "antd",
-      "style": true,   // or 'css'
+      "style": true,
     }]
   ],
   babelrc: false,

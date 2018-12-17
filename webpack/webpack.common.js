@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const babelOptions = require('./babel.config');
 
@@ -27,7 +28,7 @@ const config = {
     'react-dom': 'ReactDOM',
   },
   resolve: {
-    extensions: ['.js','.jsx', '.ts', '.tsx']
+    extensions: ['.js','.jsx', '.ts', '.tsx', '.less']
   },
   module: {
     rules: [{
@@ -53,7 +54,37 @@ const config = {
     },
     {
       test: /\.css$/,
-      use: 'css-loader',
+      use: ['style-loader', 'css-loader'],
+    },
+    {
+      test: /\.less$/,
+      use: ExtractCssChunks.extract({
+        use: libifyOptions.concat([
+          { loader: 'css-loader' },
+          {
+            loader: 'less-loader',
+            options: {
+              javascriptEnabled: true,
+              modifyVars: {
+                'primary-color': '#6F85FF',
+              }
+            }
+          }
+        ])
+      }),
+      // use: [
+      //   { loader: 'style-loader' },
+      //   { loader: 'css-loader' },
+      //   {
+      //     loader: 'less-loader',
+      //     options: {
+      //       javascriptEnabled: true,
+      //       modifyVars: {
+      //         'primary-color': '#6F85FF',
+      //       }
+      //     }
+      //   }
+      // ],
     },
     {
       test: /\.scss$/,
@@ -84,9 +115,8 @@ const config = {
     }]
   },
   plugins: [
-    new ExtractCssChunks({
-      filename: "[name].css",
-    }),
+    new ExtractTextPlugin({ filename: 'antd.css' }),
+    new ExtractCssChunks({ filename: "[name].css" }),
     new webpack.optimize.CommonsChunkPlugin({
       names: ['bootstrap'], // needed to put webpack bootstrap code before chunks
       filename: '[name].js',

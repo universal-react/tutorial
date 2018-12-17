@@ -4,12 +4,14 @@
     {
       "name": "launch via ts-node",
       "type": "node",
+      "runtimeVersion": "9.11.1",
       "request": "launch",
       "args": ["${workspaceRoot}/src/server/server.ts"],
       "runtimeArgs": ["-r", "ts-node/register"],
       "sourceMaps": true,
       "cwd": "${workspaceRoot}",
       "protocol": "inspector",
+      "preLaunchTask": "",
       "env": {
         "NODE_ENV": "development",
       },
@@ -33,5 +35,6 @@
         "NODE_ENV": "production",
       }
     },
+    
   ]
 }
