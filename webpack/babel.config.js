@@ -15,10 +15,10 @@ const babelConfig = {
   plugins: [
     "universal-import",
     "@babel/plugin-syntax-dynamic-import",
-    ["import", {
-      "libraryName": "antd",
-      "style": true,
-    }]
+    // ["import", {
+    //   "libraryName": "antd",
+    //   "style": true,
+    // }]
   ],
   babelrc: false,
 };

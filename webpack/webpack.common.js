@@ -58,33 +58,32 @@ const config = {
     },
     {
       test: /\.less$/,
-      use: ExtractCssChunks.extract({
-        use: libifyOptions.concat([
-          { loader: 'css-loader' },
-          {
-            loader: 'less-loader',
-            options: {
-              javascriptEnabled: true,
-              modifyVars: {
-                'primary-color': '#6F85FF',
-              }
-            }
-          }
-        ])
-      }),
-      // use: [
-      //   { loader: 'style-loader' },
-      //   { loader: 'css-loader' },
-      //   {
-      //     loader: 'less-loader',
-      //     options: {
-      //       javascriptEnabled: true,
-      //       modifyVars: {
-      //         'primary-color': '#6F85FF',
+      // use: ExtractCssChunks.extract({
+      //   use: libifyOptions.concat([
+      //     { loader: 'css-loader' },
+      //     {
+      //       loader: 'less-loader',
+      //       options: {
+      //         javascriptEnabled: true,
+      //         modifyVars: {
+      //           'primary-color': '#6F85FF',
+      //         }
       //       }
       //     }
-      //   }
-      // ],
+      //   ])
+      // }),
+      use: ExtractTextPlugin.extract([
+        { loader: 'css-loader' },
+        {
+          loader: 'less-loader',
+          options: {
+            javascriptEnabled: true,
+            modifyVars: {
+              'primary-color': '#6F85FF',
+            }
+          }
+        }
+      ]),
     },
     {
       test: /\.scss$/,
@@ -115,7 +114,7 @@ const config = {
     }]
   },
   plugins: [
-    new ExtractTextPlugin({ filename: 'antd.css' }),
+    new ExtractTextPlugin('antd.css'),
     new ExtractCssChunks({ filename: "[name].css" }),
     new webpack.optimize.CommonsChunkPlugin({
       names: ['bootstrap'], // needed to put webpack bootstrap code before chunks

@@ -5,6 +5,8 @@ import styles from './profile.scss';
 import html from '../../assets/html/embed.html';
 import img from '../../assets/images/pig.jpg';
 
+import { Button } from 'antd';
+
 export class Profile extends React.Component<any, any> {
   componentWillMount() {
     console.log(img);
@@ -15,6 +17,7 @@ export class Profile extends React.Component<any, any> {
     return (
       <div className={styles.profile}>
         <div>This is my profile!</div>
+        <Button type="danger">hahaha</Button>
         <img src={img} />
         <div>{html}</div>
       </div>

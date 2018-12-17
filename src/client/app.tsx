@@ -4,6 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 
 import routers from './routers';
 
+import 'antd/dist/antd.less';
+
 export default () => (
   <BrowserRouter>
     {renderRoutes(routers)}
