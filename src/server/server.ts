@@ -26,6 +26,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('*', (req, res, next) => {
+  // tslint:disable-next-line
   console.log(req.originalUrl);
   next();
 });
